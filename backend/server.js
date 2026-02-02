@@ -10,7 +10,7 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const app = express();
-const PORT = process.env.PORT;
+const PORT = process.env.PORT||8080;
 
 app.use(cors({
   origin: "*"
@@ -21,9 +21,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/api/auth", authRoutes);
 app.use("/api", chatRoutes);
 
-app.get("/", (req, res) => {
-  res.send("ZenGPT Backend is running 🚀");
-});
+
 const connectDB = async () => {
   try {
     await mongoose.connect(process.env.MONGODB_URI);
@@ -35,9 +33,10 @@ const connectDB = async () => {
 app.use(express.static(path.join(__dirname, "build")));
 
 // For any route not handled by API, serve index.html
-app.get("*", (req, res) => {
+app.get("/:path(*)", (req, res) => {
   res.sendFile(path.join(__dirname, "build", "index.html"));
 });
+
 
 app.listen(PORT, () => {
   console.log("server is runig on port");
