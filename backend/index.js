@@ -4,7 +4,11 @@ import cors from "cors";
 import mongoose from "mongoose";
 import chatRoutes from "./routes/chart.js";
 import authRoutes from "./routes/authRoutes.js";
+import path from "path";
+import { fileURLToPath } from "url";
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 const app = express();
 const PORT = process.env.PORT;
 
@@ -28,6 +32,12 @@ const connectDB = async () => {
     console.log("failed to connect", err);
   }
 };
+app.use(express.static(path.join(__dirname, "build")));
+
+// For any route not handled by API, serve index.html
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "build", "index.html"));
+});
 
 app.listen(PORT, () => {
   console.log("server is runig on port");
