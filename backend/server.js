@@ -17,6 +17,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/api/auth", authRoutes);
 app.use("/api", chatRoutes);
 
+app.get("/", (req, res) => {
+  res.send("ZenGPT Backend is running 🚀");
+});
 const connectDB = async () => {
   try {
     await mongoose.connect(process.env.MONGODB_URI);
