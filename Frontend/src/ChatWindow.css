@@ -1,0 +1,254 @@
+/* .chartwindow{
+    background-color: #212121;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.navbar{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar span{
+        margin: 0.5rem 1rem;
+}
+
+.usericonDiv{
+        margin: 0.5rem 1rem;
+}
+
+.userIcon{
+  background-color: #055198;  
+  height: 30px;
+  width: 30px; 
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.chatInput{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.inputbox{
+width: 100%;
+position: relative;
+max-width: 750px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+
+}
+input{
+    width: 100%;
+    border: none;
+    background-color:rgba(255,255,255,0.05) ;
+    padding: 20px;
+    font-size:0.8rem ;
+    border-radius: 25px;
+    box-shadow: rgba(0,0,0,0.05) 0 54px 55px,
+    rgba(0,0,0,0.05) 0 -12px 30px,
+    rgba(0,0,0,0.05) 0 4px 6px,
+    rgba(0,0,0,0.05) 0 12px 3px,
+    rgba(0,0,0,0.05) 0 -3px 5px,
+    ;
+}
+input:focus{
+    outline: none;
+}
+#submit{
+    cursor: pointer;
+    height: 35px;
+    width: 35px;
+    font-size: 20px;
+    right: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+}
+#submit i:hover{
+    color: white;
+}
+.info{
+    font-size: 0.8rem;
+    padding:0.5rem ;
+     color: #b4b4b4;
+}
+
+.dropDown{
+    position: absolute;
+    top: 4rem;
+    right: 4rem;
+    width: 150px;
+    background-color: #323232;
+    padding: 0.3rem 0.5rem;
+    border-radius: 10px;
+    text-align: left;
+    z-index: 1000;
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+}
+
+.ddi{
+    font-size: 0.8rem;
+    margin: 0.3rem 0rem;
+    padding: 0.5rem 0.2rem;
+    cursor: pointer;
+}
+
+.ddi:hover{
+    background-color: rgba(100,100,100,0.1);
+    border-radius:6px ;
+} */
+
+
+
+
+.chartwindow {
+  background-color: var(--bg-main);
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+/* NAVBAR */
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+    /* background-color: var(--bg-card); */
+
+}
+hr{
+  color: black;
+}
+.navbar span {
+  margin: 0.5rem 1rem;
+  color: var(--text-main);
+}
+
+/* USER ICON */
+.usericonDiv {
+  margin: 0.5rem 1rem;
+}
+
+.userIcon {
+  background-color: #055198; /* stays same */
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: white;
+}
+.userIcon .fa-user{
+  color: white;
+}
+
+/* INPUT AREA */
+.chatInput {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.inputbox {
+  width: 100%;
+  position: relative;
+  max-width: 750px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+input {
+  width: 100%;
+  border: none;
+  background-color: var(--bg-card);
+  color: var(--text-main);
+  padding: 20px;
+  font-size: 0.8rem;
+  border-radius: 25px;
+  box-shadow: rgba(0, 0, 0, 0.08) 0 4px 12px;
+}
+
+input::placeholder {
+  color: var(--text-muted);
+}
+
+input:focus {
+  outline: none;
+}
+
+/* SUBMIT BUTTON */
+#submit {
+  cursor: pointer;
+  height: 35px;
+  width: 35px;
+  font-size: 20px;
+  right: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  color: var(--text-muted);
+}
+
+#submit i:hover {
+  color: var(--text-main);
+}
+
+/* INFO TEXT */
+.info {
+  font-size: 0.8rem;
+  padding: 0.5rem;
+  color: var(--text-muted);
+}
+
+/* DROPDOWN */
+.dropDown {
+  position: absolute;
+  top: 4rem;
+  right: 4rem;
+  width: 150px;
+  background-color: var(--bg-card);
+  padding: 0.3rem 0.5rem;
+  border-radius: 10px;
+  text-align: left;
+  z-index: 1000;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.ddi {
+  font-size: 0.8rem;
+  margin: 0.3rem 0rem;
+  padding: 0.5rem 0.4rem;
+  cursor: pointer;
+  color: var(--text-main);
+}
+
+.ddi:hover {
+  background-color: rgba(100, 100, 100, 0.1);
+  border-radius: 6px;
+}
