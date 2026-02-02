@@ -33,9 +33,10 @@ const connectDB = async () => {
 app.use(express.static(path.join(__dirname, "build")));
 
 // For any route not handled by API, serve index.html
-app.get("/:path(*)", (req, res) => {
+app.get(/^\/.*$/, (req, res) => {
   res.sendFile(path.join(__dirname, "build", "index.html"));
 });
+
 
 
 app.listen(PORT, () => {
